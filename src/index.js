@@ -65,7 +65,7 @@ const genres = (state = [], action) => {
 }
 
 // Used to store the details of the selected movie
-const holdMovieDetails = (state = {}, action) => {
+const movieDetails = (state = {}, action) => {
     if(action.type ==='DISPLAY_MOVIE_DETAILS'){
         return action.payload
     }

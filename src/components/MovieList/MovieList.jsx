@@ -30,9 +30,14 @@ function MovieList() {
         history.push('/details')
     }
 
+    const AddAMovie = () => {
+        history.push('/add')
+    }
+    
     return (
         <div>
             <h1>MovieList</h1>
+            <button onClick={addAMovie}>Add A New Movie</button>
             <section className="movies">
                 <Grid container spacing={5}>
                 {movies.map(movie => {

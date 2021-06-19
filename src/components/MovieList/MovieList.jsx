@@ -17,7 +17,7 @@ function MovieList() {
         console.log(id);
         const selectedMovie = id;
         dispatch({type: 'GET_DETAILS', payload: selectedMovie})
-        history.push('/detail')
+        history.push('/details')
     }
 
     return (

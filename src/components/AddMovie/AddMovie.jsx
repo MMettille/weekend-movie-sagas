@@ -20,9 +20,11 @@ function addMovie(){
     })
 
     const handleSubmit = (event) => {
-        event.preventDefault()
-        console.log('clicked submit')
-        console.log(newMovie)
+        event.preventDefault();
+        console.log(newMovie);
+        dispatch({type: 'ADD_NEW_MOVIE', payload: newMovie})
+        history.push('/')
+        setNewMovie('');
     }
 
     const cancelClick = () => {

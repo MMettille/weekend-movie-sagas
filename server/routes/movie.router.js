@@ -19,8 +19,8 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   // displays the ID of the movie the user selected
   console.log(req.params.id)
-  const queryText = `SELECT "movies".title, "movies".poster, "movies".description, STRING_AGG("genres".name, ', ') AS "genres" FROM "movies"
-  JOIN "movies_genres" ON "movies".id = "movies_genres".id
+  const queryText = `SELECT "movies".title, "movies".poster, "movies".description, ARRAY_AGG("genres".name) AS "genres" FROM "movies"
+  JOIN "movies_genres" ON "movies".id = "movies_genres".movie_id
   JOIN "genres" ON "movies_genres".genre_id = "genres".id
   WHERE "movies".id = $1
   GROUP BY "movies".title, "movies".poster, "movies".description;`;
@@ -46,7 +46,7 @@ router.post('/', (req, res) => {
   pool.query(insertMovieQuery, [req.body.title, req.body.poster, req.body.description])
   .then(result => {
     console.log('New Movie Id:', result.rows[0].id); //ID IS HERE!
-    console.log('New Movie Genre:', req.body.genre_id) // GENRE IS HERE!
+    console.log('New Movie Genre:', req.body.genre_id) // GENRE IS HERE
     const createdMovieId = result.rows[0].id
   
     // Now handle the genre reference

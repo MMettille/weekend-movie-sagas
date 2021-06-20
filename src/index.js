@@ -35,7 +35,7 @@ function* getDetails(action){
     try{
         const response = yield axios.get(`/api/movie/${action.payload}`)
         // The response will be an array of one thing. Display that one thing.
-        console.log(response.data[0])
+        console.log('Inside getDetails', response.data)
         yield put({type: 'DISPLAY_MOVIE_DETAILS', payload: response.data[0]})
     } catch (err){
         console.log(err)

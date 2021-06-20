@@ -43,7 +43,7 @@ function MovieList() {
                 <Grid container spacing={5}>
                 {movies.map(movie => {
                     return (
-                        <Grid item sm={3} >
+                        <Grid item sm={3}>
                             <Paper>
                                 <Card key={movie.id} onClick={() => handleClick(movie.id)}>
                                     <CardActionArea>

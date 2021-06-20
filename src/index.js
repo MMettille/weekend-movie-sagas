@@ -15,7 +15,7 @@ import axios from 'axios';
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
     yield takeEvery('GET_DETAILS', getDetails)
-    yield takeEvery('ADD_NEW_MOVE', addNewMovie)
+    yield takeEvery('ADD_NEW_MOVIE', addNewMovie)
 }
 
 function* fetchAllMovies() {
@@ -46,7 +46,7 @@ function* addNewMovie(action){
     try{
         const newMovie = action.payload;
         console.log(newMovie);
-        yield axios.post('/', newMovie)
+        yield axios.post('/api/movie', newMovie)
         yield put({type: 'FETCH_MOVIES'})
     } catch (err){
         console.log(err)

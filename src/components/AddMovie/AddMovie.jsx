@@ -16,7 +16,7 @@ function addMovie(){
         title: '',
         poster: '',
         description: '',
-        genre: ''
+        genre_id: ''
     })
 
     const handleSubmit = (event) => {
@@ -61,7 +61,7 @@ function addMovie(){
         <Select
             labelId="genre selection"
             id="demo-simple-select"
-            onChange={(event) => setNewMovie({...newMovie, genre: event.target.value})}
+            onChange={(event) => setNewMovie({...newMovie, genre_id: event.target.value})}
             required={true}
         >
           <MenuItem value={1}>Adventure</MenuItem>

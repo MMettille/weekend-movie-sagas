@@ -7,6 +7,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
 
 function addMovie(){
 
@@ -57,12 +58,13 @@ function addMovie(){
             onChange={(event) => setNewMovie({...newMovie, description: event.target.value})}
             required={true}
         />
-        <InputLabel id="demo-simple-select-label">Genre</InputLabel>
+        <InputLabel id="demo-simple-select-label" required={true}>Genre</InputLabel>
         <Select
             labelId="genre selection"
             id="demo-simple-select"
             onChange={(event) => setNewMovie({...newMovie, genre_id: event.target.value})}
             required={true}
+            inputProps={{ 'aria-label': 'age' }}
         >
           <MenuItem value={1}>Adventure</MenuItem>
           <MenuItem value={2}>Animated</MenuItem>
@@ -78,10 +80,9 @@ function addMovie(){
           <MenuItem value={12}>Space-Opera</MenuItem>
           <MenuItem value={13}>Superhero</MenuItem>
         </Select>
-        
-        <Button type="submit">Save</Button>
+        <Button type="submit" size="small" variant="contained">Save</Button>
         </form>
-        <Button onClick={cancelClick}>Cancel</Button>
+        <Button onClick={cancelClick} size="small" variant="contained">Cancel</Button>
         </>
     )
 }

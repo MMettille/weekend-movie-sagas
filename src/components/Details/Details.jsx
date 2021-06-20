@@ -39,7 +39,7 @@ function Details() {
                 </CardContent>
             </CardActionArea>
         </Card>
-        <Button size="large" onClick={handleClick}>Return to List</Button>
+        <Button size="large" variant="contained" onClick={handleClick}>Return to List</Button>
         </div>
     )
 }

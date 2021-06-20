@@ -7,7 +7,6 @@ import './MovieList.css'
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
@@ -38,7 +37,7 @@ function MovieList() {
     return (
         <div>
             <h1>MovieList</h1>
-            <button onClick={addAMovie}>Add A New Movie</button>
+            <Button onClick={addAMovie} size="large" variant="contained">Add A New Movie</Button>
             <section className="movies">
                 <Grid container spacing={5}>
                 {movies.map(movie => {

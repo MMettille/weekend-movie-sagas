@@ -30,10 +30,11 @@ function MovieList() {
         history.push('/details')
     }
 
-    const AddAMovie = () => {
+    const addAMovie = () => {
+        console.log('clicked add')
         history.push('/add')
     }
-    
+
     return (
         <div>
             <h1>MovieList</h1>

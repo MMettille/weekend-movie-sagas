@@ -13,6 +13,7 @@ function Details() {
     const history = useHistory();
     const genres = details.genres
     console.log(details)
+    console.log(details.genres)
     console.log(genres)
 
     const handleClick = () => {
@@ -33,7 +34,7 @@ function Details() {
                     <Typography gutterBottom variant="h3" component="h2">Genres:</Typography>
                     {genres.map(name => {
                         return (
-                            <Typography gutterBottom variant="h5" component="h3">{name}</Typography>
+                            <Typography gutterBottom variant="h5" component="h3" key={name}>{name}</Typography>
                         )
                     })}
                 </CardContent>

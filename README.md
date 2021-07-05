@@ -6,9 +6,6 @@ _Duration: 3 Day Sprint_
 
 This project allows users to interact with a database of movies. Upon load of the homepage, the user is able to click on the the movie post to display the details of the movie - including the summary and genres. From the details page, the user is able to edit both the details and summary, and save it to the database.
 
-## Screen Shot
-![Image of a blue and green to-do list](./photo.png)
-
 ## Installation
 - Create a database named saga-movies_weekend,
 - The queries in the database.sql file are set up to create all the necessary tables that you will need to have this app work correctly. The project is built on Postgres, so you will need to make sure to have that installed. I would recommend using Postico to run those queries as that was used to create the queries.
